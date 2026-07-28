@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HenDo Privacy
 
-## Getting Started
+HenDo가 제공하는 앱의 개인정보처리방침을 공개하는 Next.js 사이트입니다.
 
-First, run the development server:
+- 공개 사이트: <https://privacy-two-flame.vercel.app>
+- SIKKU 개인정보처리방침: <https://privacy-two-flame.vercel.app/sikku>
+
+## 기술 구성
+
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Vercel
+
+## 로컬 실행
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`http://localhost:3000`에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 품질 검사
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run typecheck
+npm run lint
+npm run build
+npm audit --omit=dev
+```
 
-## Learn More
+## 프로젝트 구조
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/
+│   ├── [appSlug]/page.tsx    # 앱별 동적 정책 라우트
+│   ├── layout.tsx            # 공통 레이아웃
+│   └── page.tsx              # 기본 정책 페이지
+├── components/
+│   ├── layout/               # 헤더와 푸터
+│   └── privacy/              # 정책 표시 컴포넌트
+├── config/site.ts            # 사이트 제목과 내비게이션
+├── data/privacy-policies.ts  # 앱별 개인정보처리방침 데이터
+└── types/privacy-policy.ts   # 정책 데이터 타입
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 새 앱 정책 추가
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. `src/data/privacy-policies.ts`에 `PrivacyPolicy` 형식의 정책을 추가합니다.
+2. 추가한 정책을 `privacyPolicies` 배열에 등록합니다.
+3. 빌드하면 정책의 `slug`를 사용하는 경로와 헤더 메뉴가 자동으로 생성됩니다.
 
-## Deploy on Vercel
+예를 들어 `slug`가 `sample`이면 `/sample`에서 정책을 확인할 수 있습니다.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 배포
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+GitHub `main` 브랜치가 Vercel 프로젝트 `privacy`와 연결되어 있습니다. `main`에 푸시하면 프로덕션 배포가 자동으로 실행됩니다.
