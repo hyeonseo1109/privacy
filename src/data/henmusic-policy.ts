@@ -6,9 +6,9 @@ export const henMusicPrivacyPolicy = {
   navLabel: "HenMusic",
   developer: "HenDo",
   contactEmail: "alsgustj2@naver.com",
-  effectiveDate: "2026년 9월 7일",
+  effectiveDate: "2026년 9월 23일",
   summary:
-    "HenMusic은 기기의 로컬 음악을 재생하고 사용자가 선택한 앨범 커버와 가사를 관리합니다. 음원 파일은 개발자 서버로 전송하지 않으며, 사용자가 온라인 앨범 커버 검색을 실행한 경우에만 검색어가 MusicBrainz로 전송됩니다.",
+    "HenMusic은 기기의 로컬 음악을 재생하고 사용자가 선택한 앨범 커버와 가사를 기기 안에서 관리합니다. 공개 배포 버전은 음원 파일, 음악 정보, 가사 또는 사용 기록을 개발자나 제3자 서버로 전송하지 않습니다.",
   sections: [
     {
       id: "overview",
@@ -42,12 +42,11 @@ export const henMusicPrivacyPolicy = {
     },
     {
       id: "network",
-      title: "4. 외부 서비스와 전송 정보",
+      title: "4. 외부 전송 및 제3자 제공",
       paragraphs: [
-        "사용자가 ‘앨범 커버 검색’을 직접 실행하면 입력한 검색어(보통 곡명, 아티스트, 앨범명 조합)가 MusicBrainz로 전송됩니다. MusicBrainz가 반환한 release ID로 Cover Art Archive의 커버 이미지 미리보기를 불러옵니다.",
-        "Cover Art Archive 커버는 이미지별 저작권이 달라 앱에서 미리보기만 제공하며 자동으로 저장·자르기·음원 파일에 삽입하지 않습니다.",
-        "Google Play 공개 release에서는 LRCLIB 원격 가사 검색이 비활성화됩니다. LRCLIB의 가사 콘텐츠 표시·저장·수정 권한이 명확해지거나 별도 라이선스를 확보하기 전에는 원격 가사 metadata를 전송하지 않습니다.",
-        "음원 파일, 사용자가 작성한 가사, 재생 기록, 좋아요, 사용자 앨범·폴더 정보는 MusicBrainz나 Cover Art Archive로 전송하지 않습니다.",
+        "Google Play 공개 배포 버전은 인터넷 권한을 요청하지 않으며 원격 앨범커버 검색, 원격 가사 검색, 광고, 사용자 행동 분석, 로그인 또는 크래시 수집 서비스를 사용하지 않습니다.",
+        "음원 파일, 음악 metadata, 사용자가 작성하거나 붙여넣은 가사, 재생 기록, 좋아요, 현재 재생목록, 사용자 앨범·폴더 및 설정은 개발자나 제3자 서버로 전송되지 않습니다.",
+        "개발자는 앱에서 처리하는 정보를 판매, 대여 또는 제3자에게 제공하지 않습니다.",
       ],
     },
     {
@@ -66,7 +65,6 @@ export const henMusicPrivacyPolicy = {
         "알림: 백그라운드 재생 제어와 재생 상태를 표시합니다.",
         "포그라운드 미디어 재생: 화면이 꺼지거나 다른 앱을 사용할 때도 음악을 재생합니다.",
         "다른 앱 위에 표시: 사용자가 플로팅 가사를 켠 경우에만 가사 오버레이를 표시합니다.",
-        "인터넷: 사용자가 실행한 MusicBrainz/Cover Art Archive 커버 검색과 미리보기에 사용합니다.",
         "사진 선택: Android 시스템 사진 선택기에서 사용자가 직접 고른 이미지만 접근하며 전체 사진 권한을 요청하지 않습니다.",
       ],
     },
@@ -75,6 +73,7 @@ export const henMusicPrivacyPolicy = {
       title: "7. 음원 파일 변경",
       paragraphs: [
         "곡 정보 또는 앨범 커버 변경은 사용자가 명시적으로 저장을 선택하고 Android의 MediaStore 쓰기 승인을 완료한 경우에만 수행됩니다. 앱은 승인된 MP3/M4A/FLAC 파일의 metadata를 수정할 수 있습니다.",
+        "앨범 커버는 사용자가 시스템 사진 선택기에서 직접 선택할 수 있고, 가사는 직접 입력하거나 클립보드에서 붙여넣거나 LRC 파일로 가져올 수 있습니다.",
       ],
     },
     {
