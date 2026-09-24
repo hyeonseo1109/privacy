@@ -3,10 +3,9 @@ import type { PrivacyPolicy } from "@/types/privacy-policy";
 export const henMusicPrivacyPolicy = {
   appName: "HenMusic",
   slug: "henmusic",
-  navLabel: "HenMusic",
   developer: "HenDo",
   contactEmail: "alsgustj2@naver.com",
-  effectiveDate: "2026년 9월 23일",
+  effectiveDate: "2026년 9월 24일",
   summary:
     "HenMusic은 기기의 로컬 음악을 재생하고 사용자가 선택한 앨범 커버와 가사를 기기 안에서 관리합니다. 공개 배포 버전은 음원 파일, 음악 정보, 가사 또는 사용 기록을 개발자나 제3자 서버로 전송하지 않습니다.",
   sections: [
