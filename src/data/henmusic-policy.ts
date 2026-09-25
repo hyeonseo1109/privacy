@@ -3,6 +3,7 @@ import type { PrivacyPolicy } from "@/types/privacy-policy";
 export const henMusicPrivacyPolicy = {
   appName: "HenMusic",
   slug: "henmusic",
+  navLabel: "HenMusic",
   developer: "HenDo",
   contactEmail: "alsgustj2@naver.com",
   effectiveDate: "2026년 9월 24일",
