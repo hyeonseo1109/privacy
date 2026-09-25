@@ -5,6 +5,6 @@ export const siteConfig = {
   homePath: "/",
   navigation: privacyPolicies.map((policy) => ({
     href: `/${policy.slug}`,
-    label: policy.slug.toUpperCase(),
+    label: policy.navLabel ?? policy.slug.toUpperCase(),
   })),
 } as const;

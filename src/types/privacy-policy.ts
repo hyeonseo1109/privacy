@@ -8,6 +8,7 @@ export type PolicySection = {
 export type PrivacyPolicy = {
   appName: string;
   slug: string;
+  navLabel?: string;
   developer: string;
   contactEmail: string;
   effectiveDate: string;
